@@ -24,15 +24,18 @@
 
         <Button
             android:id="@+id/clearButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/negativeButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/dataTypeButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
             android:layout_height="match_parent" />
     </LinearLayout>
 
@@ -45,19 +48,23 @@
 
         <Button
             android:id="@+id/nSquaredButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/nToTheXButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/nFactorialButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/divideButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent" />
     </LinearLayout>
 
@@ -69,19 +76,23 @@
         android:layout_weight="1">
         <Button
             android:id="@+id/sevenButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/eightButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/nineButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/multiplyButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent" />
     </LinearLayout>
 
@@ -94,19 +105,23 @@
 
         <Button
             android:id="@+id/fourButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/fiveButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/sixButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/subtractButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent" />
     </LinearLayout>
 
@@ -119,19 +134,23 @@
 
         <Button
             android:id="@+id/oneButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/twoButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/threeButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/addButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent" />
     </LinearLayout>
 
@@ -144,15 +163,18 @@
 
         <Button
             android:id="@+id/zeroButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/decimalButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/equalsButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent" />
 
     </LinearLayout>
