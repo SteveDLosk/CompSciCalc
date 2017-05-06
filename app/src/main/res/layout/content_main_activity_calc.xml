@@ -24,6 +24,7 @@
 
         <Button
             android:id="@+id/clearButton"
+            android:text="@string/clear"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent" />
@@ -34,6 +35,7 @@
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/dataTypeButton"
+            android:text="@string/dataType"
             android:layout_width="0dp"
             android:layout_weight="2"
             android:layout_height="match_parent" />
@@ -58,11 +60,13 @@
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/nFactorialButton"
+            android:text="@string/nFactorial"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/divideButton"
+            android:text="@string/divide"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent" />
@@ -76,21 +80,25 @@
         android:layout_weight="1">
         <Button
             android:id="@+id/sevenButton"
+            android:text="7"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/eightButton"
+            android:text="8"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/nineButton"
+            android:text="9"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/multiplyButton"
+            android:text="@string/multiply"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent" />
@@ -105,21 +113,25 @@
 
         <Button
             android:id="@+id/fourButton"
+            android:text="4"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/fiveButton"
+            android:text="5"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/sixButton"
+            android:text="6"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/subtractButton"
+            android:text="@string/subtract"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent" />
@@ -134,21 +146,25 @@
 
         <Button
             android:id="@+id/oneButton"
+            android:text="1"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/twoButton"
+            android:text="2"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/threeButton"
+            android:text="3"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/addButton"
+            android:text="@string/add"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent" />
@@ -163,16 +179,19 @@
 
         <Button
             android:id="@+id/zeroButton"
+            android:text="0"
             android:layout_width="0dp"
             android:layout_weight="2"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/decimalButton"
+            android:text="@string/decimal"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/equalsButton"
+            android:text="@string/equals"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent" />
