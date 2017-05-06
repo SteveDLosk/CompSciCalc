@@ -8,8 +8,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.TextView;
+
+import static com.weebly.stevelosk.compscicalc.R.id.numberScreen;
 
 public class MainActivityCalc extends AppCompatActivity {
+
+    String enteredChars;
+    TextView numberScreen;
+    Button[] digitButtons;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +26,32 @@ public class MainActivityCalc extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // textView of selected characters
+        numberScreen = (TextView) findViewById(R.id.numberScreen);
+
+        // initialize buttons
+        digitButtons = new Button[10];
+        digitButtons[0] = (Button) findViewById(R.id.zeroButton);
+        digitButtons[1] = (Button) findViewById(R.id.oneButton);
+        digitButtons[2] = (Button) findViewById(R.id.twoButton);
+        digitButtons[3] = (Button) findViewById(R.id.threeButton);
+        digitButtons[4] = (Button) findViewById(R.id.fourButton);
+        digitButtons[5] = (Button) findViewById(R.id.fiveButton);
+        digitButtons[6] = (Button) findViewById(R.id.sixButton);
+        digitButtons[7] = (Button) findViewById(R.id.sevenButton);
+        digitButtons[8] = (Button) findViewById(R.id.eightButton);
+        digitButtons[9] = (Button) findViewById(R.id.nineButton);
+
+        Button addButton = (Button) findViewById(R.id.addButton);
+        Button subtractButton = (Button) findViewById(R.id.subtractButton);
+        Button multiplyButton = (Button) findViewById(R.id.multiplyButton);
+        Button divideButton = (Button) findViewById(R.id.divideButton);
+        Button equalsButton = (Button) findViewById(R.id.equalsButton);
+
+        Button dataTypeButton = (Button) findViewById(R.id.dataTypeButton);
+
+        // digit button press handler
+        registerDigitButtonHandler();
     }
 
     @Override
@@ -40,5 +74,25 @@ public class MainActivityCalc extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void updateNumberScreen(TextView numberScreen) {
+        if (enteredChars != null)
+            numberScreen.setText(enteredChars);
+    }
+
+
+    private void registerDigitButtonHandler() {
+        for (int i = 0; i < 10; i++) {
+            final Button button = digitButtons[i];
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    enteredChars += button.getText().toString();
+                    updateNumberScreen(numberScreen);
+                }
+
+            });
+        }
     }
 }
