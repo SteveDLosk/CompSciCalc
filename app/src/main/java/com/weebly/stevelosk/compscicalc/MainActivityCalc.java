@@ -16,6 +16,7 @@ import static com.weebly.stevelosk.compscicalc.R.id.numberScreen;
 public class MainActivityCalc extends AppCompatActivity {
 
     String enteredChars = "";
+    String charsOnScreen = "";
     TextView numberScreen;
     Button[] digitButtons;
 
@@ -54,6 +55,7 @@ public class MainActivityCalc extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 enteredChars = "";
+                charsOnScreen = "";
                 updateNumberScreen(numberScreen);
             }
         });
@@ -85,8 +87,8 @@ public class MainActivityCalc extends AppCompatActivity {
     }
 
     private void updateNumberScreen(TextView numberScreen) {
-        if (enteredChars != null)
-            numberScreen.setText(enteredChars);
+        //if (enteredChars != null)
+            numberScreen.setText(charsOnScreen);
     }
 
 
@@ -96,7 +98,7 @@ public class MainActivityCalc extends AppCompatActivity {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    enteredChars += button.getText().toString();
+                    charsOnScreen += button.getText().toString();
                     updateNumberScreen(numberScreen);
                 }
 
