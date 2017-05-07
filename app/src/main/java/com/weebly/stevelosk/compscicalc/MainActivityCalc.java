@@ -15,7 +15,7 @@ import static com.weebly.stevelosk.compscicalc.R.id.numberScreen;
 
 public class MainActivityCalc extends AppCompatActivity {
 
-    String enteredChars;
+    String enteredChars = "";
     TextView numberScreen;
     Button[] digitButtons;
 
@@ -49,6 +49,14 @@ public class MainActivityCalc extends AppCompatActivity {
         Button equalsButton = (Button) findViewById(R.id.equalsButton);
 
         Button dataTypeButton = (Button) findViewById(R.id.dataTypeButton);
+        Button clearButton = (Button) findViewById(R.id.clearButton);
+        clearButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                enteredChars = "";
+                updateNumberScreen(numberScreen);
+            }
+        });
 
         // digit button press handler
         registerDigitButtonHandler();
