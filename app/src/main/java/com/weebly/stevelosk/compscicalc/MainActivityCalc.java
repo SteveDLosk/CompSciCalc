@@ -11,7 +11,11 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
+import static com.weebly.stevelosk.compscicalc.R.id.addButton;
+import static com.weebly.stevelosk.compscicalc.R.id.divideButton;
+import static com.weebly.stevelosk.compscicalc.R.id.multiplyButton;
 import static com.weebly.stevelosk.compscicalc.R.id.numberScreen;
+import static com.weebly.stevelosk.compscicalc.R.id.subtractButton;
 
 public class MainActivityCalc extends AppCompatActivity {
 
@@ -48,6 +52,14 @@ public class MainActivityCalc extends AppCompatActivity {
         Button multiplyButton = (Button) findViewById(R.id.multiplyButton);
         Button divideButton = (Button) findViewById(R.id.divideButton);
         Button equalsButton = (Button) findViewById(R.id.equalsButton);
+        equalsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                enteredChars += charsOnScreen;
+                charsOnScreen = enteredChars;
+                updateNumberScreen(numberScreen);
+            }
+        });
 
         Button dataTypeButton = (Button) findViewById(R.id.dataTypeButton);
         Button clearButton = (Button) findViewById(R.id.clearButton);
@@ -62,6 +74,8 @@ public class MainActivityCalc extends AppCompatActivity {
 
         // digit button press handler
         registerDigitButtonHandler();
+        // arithmetic button handlers
+        registerArithmeticButtonHandle();
     }
 
     @Override
@@ -102,6 +116,22 @@ public class MainActivityCalc extends AppCompatActivity {
                     updateNumberScreen(numberScreen);
                 }
 
+            });
+        }
+    }
+
+    private void registerArithmeticButtonHandle() {
+        final int[] arithmeticButtonIds = {addButton, subtractButton, multiplyButton, divideButton};
+        for (int i = 0; i < 4; i++) {
+            final Button button = (Button) findViewById(arithmeticButtonIds[i]);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    enteredChars += charsOnScreen;
+                    enteredChars += button.getText().toString();
+                    charsOnScreen = "";
+                    updateNumberScreen(numberScreen);
+                }
             });
         }
     }
