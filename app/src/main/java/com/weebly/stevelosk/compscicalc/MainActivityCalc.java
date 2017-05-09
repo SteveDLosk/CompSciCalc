@@ -75,6 +75,22 @@ public class MainActivityCalc extends AppCompatActivity {
             }
         });
 
+        Button nFactorialButton = (Button) findViewById(R.id.nFactorialButton);
+        nFactorialButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // ensure number input is not empty
+                if (!charsOnScreen.equals("")) {
+                    long input = Long.parseLong(charsOnScreen);
+                    long result = Calculate.factorial(input);
+                    enteredChars = "";
+                    charsOnScreen = Long.toString(result);
+                    updateNumberScreen(numberScreen);
+                }
+            }
+        });
+
         // digit button press handler
         registerDigitButtonHandler();
         // arithmetic button handlers
