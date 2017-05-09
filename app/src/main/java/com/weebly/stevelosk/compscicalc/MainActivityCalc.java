@@ -96,6 +96,34 @@ public class MainActivityCalc extends AppCompatActivity {
             }
         });
 
+        Button nSquared = (Button) findViewById(R.id.nSquaredButton);
+        Button nToTheX = (Button) findViewById(R.id.nToTheXButton);
+        nSquared.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!charsOnScreen.equals("")) {
+                    try {
+                        long input = Long.parseLong(charsOnScreen);
+                        long result = Calculate.square(input);
+                        enteredChars = "";
+                        charsOnScreen = Long.toString(result);
+                    }
+                    catch (java.lang.NumberFormatException e) {
+                        enteredChars = "";
+                        charsOnScreen = "";
+                    }
+                    updateNumberScreen(numberScreen);
+
+                }
+            }
+        });
+        nToTheX.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
         // digit button press handler
         registerDigitButtonHandler();
         // arithmetic button handlers

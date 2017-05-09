@@ -53,11 +53,13 @@
 
         <Button
             android:id="@+id/nSquaredButton"
+            android:text="x\u00B2"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/nToTheXButton"
+            android:text="x\u207F"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent" />
