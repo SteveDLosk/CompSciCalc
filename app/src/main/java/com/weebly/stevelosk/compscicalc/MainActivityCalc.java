@@ -56,7 +56,10 @@ public class MainActivityCalc extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 enteredChars += charsOnScreen;
-                charsOnScreen = enteredChars;
+                // process string of ops
+                String[] operations = Calculate.processString(enteredChars);
+                long result = Calculate.calculateString(operations);
+                charsOnScreen = Long.toString(result);
                 updateNumberScreen(numberScreen);
             }
         });

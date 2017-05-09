@@ -1,4 +1,6 @@
 package com.weebly.stevelosk.compscicalc;
+import android.util.Log;
+
 import java.math.BigInteger;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -13,7 +15,7 @@ import static com.weebly.stevelosk.compscicalc.R.string.equals;
 public class Calculate {
 
 
-    public String[] processString (String s) {
+    public static String[] processString (String s) {
         // at this point, only accepts one operator.  Will expand later.
 
         // TODO:
@@ -32,7 +34,7 @@ public class Calculate {
                 digits.append(next);
             }
             else {
-                operator += next;
+                operator = Character.toString(next);
                 operand1 = digits.toString();
                 // reset for the next operand
                 digits.setLength(0);
@@ -45,10 +47,13 @@ public class Calculate {
         result[0] = operand1;
         result[1] = operator.toString();
         result[2] = operand2;
+        String debug = result[0] + " " + result[1] + " " + result[2];
+
+        Log.d("processString", debug);
         return result;
     }
 
-    public long calculateString (String[] inputs) {
+    public static long calculateString (String[] inputs) {
         long op1 = Long.parseLong(inputs[0]);
         long op2 = Long.parseLong(inputs[2]);
 
@@ -60,12 +65,14 @@ public class Calculate {
             return op1 * op2;
         else if (inputs[1].equals("/"))
             return op1 / op2;
+        else if (inputs[1].equals("^"))
+            return exponent(op1, op2);
 
         // should be unreachable
         return Long.MIN_VALUE;
     }
 
-    public long factorial(long n) {
+    public static long factorial(long n) {
 
         // TODO:
         // handle excessively long-running processes and overflow
@@ -80,14 +87,14 @@ public class Calculate {
         return result;
     }
 
-    public long square (long n) {
+    public static long square (long n) {
         return n * n;
     }
-    public double square (double n) {
+    public static double square (double n) {
         return n * n;
     }
 
-    public long exponent (long n, long x) {
+    public static long exponent (long n, long x) {
 
         long result = n;
         while (x > 1) {
@@ -97,7 +104,7 @@ public class Calculate {
         return result;
     }
 
-    public double exponent (double n, double x) {
+    public static double exponent (double n, double x) {
 
         double result = n;
         while (x > 1) {
