@@ -23,6 +23,7 @@ public class MainActivityCalc extends AppCompatActivity {
     String charsOnScreen = "";
     TextView numberScreen;
     Button[] digitButtons;
+    boolean showingOperatorSymbol;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class MainActivityCalc extends AppCompatActivity {
 
         // textView of selected characters
         numberScreen = (TextView) findViewById(R.id.numberScreen);
+        showingOperatorSymbol = false;
 
         // initialize buttons
         digitButtons = new Button[10];
@@ -56,15 +58,18 @@ public class MainActivityCalc extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 enteredChars += charsOnScreen;
-                // process string of ops
-                String[] operations = Calculate.processString(enteredChars);
-                long result = Calculate.calculateString(operations);
-                charsOnScreen = Long.toString(result);
-                updateNumberScreen(numberScreen);
+                if (!enteredChars.equals("")) {
+                    // process string of ops
+                    String[] operations = Calculate.processString(enteredChars);
+                    long result = Calculate.calculateString(operations);
+                    charsOnScreen = Long.toString(result);
+                    updateNumberScreen(numberScreen);
+                }
             }
         });
 
         Button dataTypeButton = (Button) findViewById(R.id.dataTypeButton);
+
         Button clearButton = (Button) findViewById(R.id.clearButton);
         clearButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,6 +136,12 @@ public class MainActivityCalc extends AppCompatActivity {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    // clear leading operator symbol
+                    if (showingOperatorSymbol) {
+                        charsOnScreen = "";
+                        showingOperatorSymbol = false;
+                    }
+                    // enter digits
                     charsOnScreen += button.getText().toString();
                     updateNumberScreen(numberScreen);
                 }
@@ -147,8 +158,10 @@ public class MainActivityCalc extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     enteredChars += charsOnScreen;
-                    enteredChars += button.getText().toString();
-                    charsOnScreen = "";
+                    String operator = button.getText().toString();
+                    enteredChars += operator;
+                    charsOnScreen = operator;
+                    showingOperatorSymbol = true;
                     updateNumberScreen(numberScreen);
                 }
             });

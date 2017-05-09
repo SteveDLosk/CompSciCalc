@@ -23,7 +23,7 @@ public class Calculate {
         char[] str = s.toCharArray();
 
         StringBuilder digits = new StringBuilder();
-        String operator = null;
+        String operator = "";
         String operand1 = "";
         String operand2;
 
@@ -54,8 +54,10 @@ public class Calculate {
     }
 
     public static long calculateString (String[] inputs) {
-        long op1 = Long.parseLong(inputs[0]);
-        long op2 = Long.parseLong(inputs[2]);
+
+        try {
+            long op1 = Long.parseLong(inputs[0]);
+            long op2 = Long.parseLong(inputs[2]);
 
         if (inputs[1].equals("+"))
             return op1 + op2;
@@ -68,6 +70,10 @@ public class Calculate {
         else if (inputs[1].equals("^"))
             return exponent(op1, op2);
 
+        }
+        catch (java.lang.NumberFormatException e) {
+            return 0;
+        }
         // should be unreachable
         return Long.MIN_VALUE;
     }
